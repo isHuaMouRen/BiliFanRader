@@ -107,17 +107,16 @@ namespace FanRader
         {
             if (this.Visible)
             {
-                this.Visible = false;
-                this.WindowState = FormWindowState.Minimized;
+                this.Hide();
                 this.ShowInTaskbar = false;
             }
-            else
+            else if (!this.Visible) 
             {
-                this.Visible = true;
-                this.WindowState = FormWindowState.Normal;
+                
+                this.Show();
+                this.Activate();
                 this.ShowInTaskbar = true;
-
-                this.BringToFront();
+                
             }
 
 
